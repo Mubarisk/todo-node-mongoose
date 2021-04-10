@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="row">
+
+        TODO LIST
+
+    </h1>
+    <br /><br />
+</div>
+<div class="container">
+    <div class="row">
+        <form class="form-inline col-sm-offset-3" method="post" action="/todoSave">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="todo-item" name="todoitem" id="box"
+                    style="width: 30vw" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary form-control" value="add" style="width: 10vw" />
+            </div>
+        </form>
+    </div>
+    </div>
+    <div class="container">
+    <table class="table table-borderless">
+
+        <tbody>
+            {{#each todoElement}}
+            {{#each this}}
+            {{#if this.this}}
+
+            {{#if this.todo}}
+            <tr>
+
+                <td>{{this.todo}}</td>
+                <td>
+                    <form action="/removeTodo" method="post">
+                        <input type="hidden" name="idspecifier" value="{{this._id}}">
+                        <input class="btn btn-danger" type="submit" value="remove">
+                    </form>
+                </td>
+            </tr>
+            {{/if}}
+
+
+            {{/if}}
+            {{/each}}
+            {{/each}}
+
+        </tbody>
+    </table>
+    </div>
+
+
+</div>

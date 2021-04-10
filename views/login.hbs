@@ -1,0 +1,27 @@
+<form class="p-3 w-25 ml-7" action="/login" method="POST">
+
+  <div class="mb-3">
+    {{#if userCheker}}
+    <div class="alert alert-danger" role="alert">
+ {{userCheker}}
+</div>
+    {{else}}
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    {{/if}}
+    <input type="text" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+    </div>
+  <div class="mb-3">
+    {{#if passCheker}}
+    <div class="alert alert-danger" role="alert">
+ {{passCheker}}
+</div>
+    {{else}}
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    {{/if}}
+    <input type="password" class="form-control"  name="password" id="exampleInputPassword1">
+  </div>
+  <div class="p-3">
+      <a href="/register">create new account ?</a>
+    </div>
+  <button type="submit" class="btn btn-primary">login</button>
+</form>
